@@ -5,17 +5,6 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     site: grunt.file.readYAML('_config.yml'),
 
-    clean: {
-      options: {
-        force: true
-      },
-      site: ['<%= site.dest %>/']
-    },
-
-    jshint: {
-      all: ['Gruntfile.js']
-    },
-
     assemble: {
       options: {
         flatten: true,
@@ -31,11 +20,36 @@ module.exports = function(grunt) {
       }
     },
 
+    clean: {
+      options: {
+        force: true
+      },
+      site: ['<%= site.dest %>/']
+    },
+
     copy: {
       favicon: {
         files: [
           {expand: true, src: ['favicon.ico', 'apple-touch-icon.png'], dest: 'dist'},
         ]
+      }
+    },
+
+    jshint: {
+      all: ['Gruntfile.js']
+    },
+
+    less: {
+      development: {
+        src: 'less/bm-styles.less',
+        dest: '<%= site.assets %>/css/bm-styles.css'
+      },
+      production: {
+        options: {
+          cleancss: true
+        },
+        src: 'less/bm-styles.less',
+        dest: '<%= site.assets %>/css/bm-styles.css'
       }
     },
 
@@ -51,7 +65,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['clean', 'jshint', 'assemble', 'copy', 'watch:site']);
+  grunt.registerTask('default', ['clean', 'jshint', 'less:development', 'assemble', 'copy', 'watch:site']);
 };
