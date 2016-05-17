@@ -4,6 +4,28 @@
 // Includes all custom styles for the site
 
 
-// Importing the Bootstrap styles
-@import "bootstrap.less";
-@import "bm-variables.less";
+// Bootstrap
+@import "bootstrap";
+@import "bm-variables";
+
+// Components
+@import "components/nav-main";
+
+p {
+  margin: 0 0 @height-xxs 0;
+}
+
+section {
+  margin-top: @height-lg;
+  margin-bottom: @height-md;
+}
+
+.btn {
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border: none;
+  font-size: @font-size-large;
+  padding: @height-xxs/2 @height-sm;
+}

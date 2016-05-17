@@ -1,0 +1,87 @@
+//
+// Nav Main
+// --------------------------------------------------
+// The main navigation styles
+
+.main-header {
+  margin-top:0;
+  margin-bottom: 0;
+}
+
+.navbar-bm {
+  margin-bottom: 0;
+  border-color: @bm-gray-lightest;
+  background-color: #fff;
+
+  .navbar-header {
+    button.navbar-toggle {
+      border: none;
+      padding: 5px 10px;
+      color: @bm-gray-light;
+      outline: none;
+
+      &:hover {
+        color: @brand-primary;
+      }
+    }
+  }
+
+  .navbar-nav {
+    li {
+      margin-bottom: 0;
+      a {
+        color: @gray-dark;
+        padding: 26px 30px;
+
+        &.btn {
+          margin-top: 20px;
+          padding: @height-xxs/2 @height-sm;
+        }
+
+        &.btn-primary {
+          color: #fff !important;
+          &:hover {
+            background-color: lighten(@brand-primary, 5%);
+          }
+        }
+
+        &.btn-default {
+          color: #fff !important;
+          &:hover {
+            background-color: lighten(@brand-secondary, 5%);
+          }
+        }
+
+        &:hover {
+          color: @brand-primary;
+          background-color: transparent;
+        }
+      }
+      &.dropdown {
+        a {
+          background-color: transparent;
+        }
+      }
+      &.active {
+        a {
+          color: @brand-primary;
+        }
+      }
+    }
+    .dropdown-menu {
+      border: 0;
+      padding: 0 !important;
+      box-shadow: none;
+      background-color: @bm-gray-lightest;
+      border-radius: 0;
+      li {
+        a {
+          padding: @height-xxs 30px;
+          &:hover {
+            background-color: @gray-lighter;
+          }
+        }
+      }
+    }
+  }
+}

@@ -49,6 +49,11 @@ module.exports = function(grunt) {
         files: [
           {expand: true, flatten: true, src: ['bower_components/bootstrap/fonts/*.*'], dest: '<%= site.assets %>/fonts'}
         ]
+      },
+      images: {
+        files: [
+          {expand: true, src: ['images/**/*.*'], dest: '<%= site.assets %>'}
+        ]
       }
     },
 
