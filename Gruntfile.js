@@ -27,6 +27,18 @@ module.exports = function(grunt) {
       site: ['<%= site.dest %>/']
     },
 
+    connect: {
+      server: {
+        options: {
+          livereload: true,
+          base: '<%= site.dest %>',
+          open: {
+            appName: 'Google Chrome'
+          }
+        }
+      }
+    },
+
     copy: {
       favicon: {
         files: [
@@ -59,19 +71,27 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      site: {
+      options: {
+        livereload: true,
+      },
+      assemble: {
         files: ['templates/**/*.hbs'],
-        tasks: ['jshint', 'less:development', 'assemble']
+        tasks: ['assemble']
+      },
+      less: {
+        files: 'less/**/*.less',
+        tasks: ['less:development']
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-assemble');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['clean', 'jshint', 'less:development', 'assemble', 'copy', 'watch:site']);
+  grunt.registerTask('default', ['clean', 'jshint', 'less:development', 'assemble', 'copy', 'connect', 'watch']);
 };
