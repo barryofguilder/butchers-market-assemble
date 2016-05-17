@@ -32,6 +32,11 @@ module.exports = function(grunt) {
         files: [
           {expand: true, src: ['favicon.ico', 'apple-touch-icon.png'], dest: 'dist'},
         ]
+      },
+      fonts: {
+        files: [
+          {expand: true, flatten: true, src: ['bower_components/bootstrap/fonts/*.*'], dest: '<%= site.assets %>/fonts'}
+        ]
       }
     },
 
@@ -56,7 +61,7 @@ module.exports = function(grunt) {
     watch: {
       site: {
         files: ['templates/**/*.hbs'],
-        tasks: ['jshint', 'assemble']
+        tasks: ['jshint', 'less:development', 'assemble']
       }
     }
   });

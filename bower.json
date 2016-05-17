@@ -1,0 +1,9 @@
+{
+  "name": "butchers-market-v2",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~1.12.3"
+  }
+}
