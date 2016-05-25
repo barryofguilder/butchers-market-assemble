@@ -27,6 +27,43 @@ module.exports = function(grunt) {
       site: ['<%= site.dest %>/']
     },
 
+    concat: {
+      options: {
+        separator: '\n;\n'
+      },
+      vendorStyles: {
+        src: [
+          // Fotorama, for carousel
+          'bower_components/fotorama/fotorama.css'
+        ],
+        dest: '<%= site.assets %>/css/vendor.css',
+      },
+      vendorScripts: {
+        src: [
+          // jQuery
+          'bower_components/jquery/dist/jquery.js',
+
+          // Bootstrap, commenting out the unused features
+          'bower_components/bootstrap/js/transition.js',
+          //'bower_components/bootstrap/js/alert.js',
+          'bower_components/bootstrap/js/button.js',
+          //'bower_components/bootstrap/js/carousel.js',
+          //'bower_components/bootstrap/js/collapse.js',
+          //'bower_components/bootstrap/js/dropdown.js',
+          //'bower_components/bootstrap/js/modal.js',
+          //'bower_components/bootstrap/js/tooltip.js',
+          //'bower_components/bootstrap/js/popover.js',
+          //'bower_components/bootstrap/js/scrollspy.js',
+          //'bower_components/bootstrap/js/tab.js',
+          //'bower_components/bootstrap/js/affix.js',
+
+          // Fotorama, for carousel
+          'bower_components/fotorama/fotorama.js'
+        ],
+        dest: '<%= site.assets %>/js/vendor.js',
+      }
+    },
+
     connect: {
       server: {
         options: {
@@ -52,7 +89,11 @@ module.exports = function(grunt) {
       },
       images: {
         files: [
-          {expand: true, src: ['images/**/*.*'], dest: '<%= site.assets %>'}
+          {expand: true, src: ['images/**/*.*'], dest: '<%= site.assets %>'},
+          {expand: true, flatten: true, src: [
+              'bower_components/fotorama/fotorama.png',
+              'bower_components/fotorama/fotorama@2x.png'
+            ], dest: '<%= site.assets %>/css'}
         ]
       }
     },
@@ -86,11 +127,16 @@ module.exports = function(grunt) {
       less: {
         files: 'less/**/*.less',
         tasks: ['less:development']
+      },
+      images: {
+        files: 'images/**/*.*',
+        tasks: ['copy:images']
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-assemble');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -98,5 +144,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['clean', 'jshint', 'less:development', 'assemble', 'copy', 'connect', 'watch']);
+  grunt.registerTask('default', ['clean', 'jshint', 'less:development', 'assemble', 'concat', 'copy', 'connect', 'watch']);
 };

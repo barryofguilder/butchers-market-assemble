@@ -1,0 +1,35 @@
+//
+// Animation
+// --------------------------------------------------
+// Contains element animations
+
+// Transition timings
+@trans-low:               0.1s;
+@trans-med:               0.15s;
+@trans-hgh:               0.2s;
+
+
+//== Colors
+//
+
+a,
+.btn,
+.feature-item,
+.feature-item>h5,
+.portfolio .caption,
+.team img,
+.glyphicon,
+.color-primary,
+.color-secondary {
+  transition: opacity@trans-hgh, background-color @trans-hgh, color @trans-hgh;
+  &:hover { transition: opacity@trans-low, background-color @trans-low, color @trans-low; }
+}
+
+
+//== Borders
+//
+
+.client-item {
+  transition: border @trans-hgh;
+  &:hover { transition: border @trans-low; }
+}

@@ -1,0 +1,92 @@
+//
+// Nav Main
+// --------------------------------------------------
+// The main navigation styles
+
+.butcher-promo {
+  margin-top: 0;
+  margin-bottom: @height-lg;
+  background: url("@{images}/promo.jpg") 50% 0 no-repeat @brand-primary;
+
+  h1 {
+    margin-top: @height-lg;
+  }
+
+  h1, p.lead {
+    color: #fff;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.75);
+  }
+
+  p.lead {
+    margin-top: @height-xs;
+  }
+
+  .fluid-width-video-wrapper {
+    margin-top: @height-lg;
+    margin-bottom: @height-md;
+  }
+
+  @media (max-width: @screen-sm-max) {
+    text-align: center;
+
+    h1 {
+      margin-top: @height-sm;
+    }
+  }
+}
+
+.iphone-cover{
+  height: 730px;
+
+  @media (max-width: @screen-md-max) {
+    height: 715px;
+  }
+}
+
+.promo-wrapper {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.iphone {
+  width: 450px;
+  margin: @height-sm auto 0;
+
+  @media (max-width: @screen-xs-max) {
+    width:300px;
+    margin: 30px auto 0;
+  }
+}
+
+.iphone-gallery-wrapper {
+  position: absolute;
+  left: 49.8%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 332px;
+  top: 138px;
+
+  @media (max-width: @screen-md-max) {
+    width: 332px;
+    top: 138px;
+  }
+
+  @media (max-width: @screen-sm-max) {
+    width: 332px;
+    top: 138px;
+  }
+
+  @media (max-width: @screen-xs-max) {
+    width: 220px;
+    top: 90px;
+    left: 50%;
+  }
+
+  @media (max-width: 320px) {
+    width: 220px;
+    top: 90px;
+    left: 51.3%;
+  }
+}
