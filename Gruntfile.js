@@ -58,7 +58,10 @@ module.exports = function(grunt) {
           //'bower_components/bootstrap/js/affix.js',
 
           // Fotorama, for carousel
-          'bower_components/fotorama/fotorama.js'
+          'bower_components/fotorama/fotorama.js',
+
+          // jQuery Stellar, for parallax
+          'bower_components/jquery.stellar/jquery.stellar.js'
         ],
         dest: '<%= site.assets %>/js/vendor.js',
       }

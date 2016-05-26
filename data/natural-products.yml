@@ -1,0 +1,25 @@
+products:
+  - title: "Natural Pork"
+    isTop: false
+    items:
+      - "No added hormones"
+      - "No antibiotics"
+      - "Source of key nutrients"
+      - "Heart healthy"
+
+  - title: "Natural Beef"
+    isTop: true
+    items:
+      - "Our beef quality is even more selective than USDA prime, choice, &amp; select!*"
+      - "No added hormones"
+      - "No antibiotics"
+      - "Source of key nutrients"
+      - "Heart healthy"
+
+  - title: "Natural Poultry"
+    isTop: false
+    items:
+      - "No added hormones"
+      - "No antibiotics"
+      - "Source of key nutrients"
+      - "Heart healthy"

@@ -8,6 +8,8 @@ var butcherApp = function ($, undefined) {
     $(window).resize(function() {
       setupMainNav();
     });
+
+    setupParallax();
   });
 
   function setupMainNav() {
@@ -19,6 +21,11 @@ var butcherApp = function ($, undefined) {
       $('.main-nav').addClass('navbar-fixed-top');
       $('body').css('margin-top','76px');
     }
+  }
+
+  function setupParallax() {
+    // Background images scrolling parallax
+    $(window).stellar({ horizontalScrolling: false });
   }
 
 }(window.jQuery);

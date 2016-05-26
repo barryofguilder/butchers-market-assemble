@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "~3.3.6",
     "jquery": "~1.12.3",
-    "fotorama": "^4.6.4"
+    "fotorama": "^4.6.4",
+    "jquery.stellar": "^0.6.2"
   }
 }
