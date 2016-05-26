@@ -1,0 +1,12 @@
+<div class="col-sm-3 feature-item">
+  <h5 class="feature-title">{{title}} {{price}}</h5>
+  {{#if items}}
+    <ul class="feature-item-list">
+      {{#each items}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p class="feature-item-description">{{description}}</p>
+  {{/if}}
+</div>

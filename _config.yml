@@ -7,11 +7,11 @@ dest:             <%= site.root %>
 assets:           <%= site.dest %>/assets
 
 # Data
-data:             data/*.{json,yml}
+data:             data/*.yml
 
 # Templates
 templates:        templates
-includes:         <%= site.templates %>/includes/*.hbs
+partials:         <%= site.templates %>/partials/*.hbs
 layouts:          <%= site.templates %>/layouts
 layout:           default.hbs
 

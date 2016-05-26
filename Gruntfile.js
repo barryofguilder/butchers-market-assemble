@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         assets: '<%= site.assets %>',
         site: '<%= site %>',
         data: ['<%= site.data %>'],
-        partials: '<%= site.includes %>',
+        partials: '<%= site.partials %>',
         layoutdir: '<%= site.layouts %>',
         layout: '<%= site.layout %>'
       },
@@ -95,11 +95,16 @@ module.exports = function(grunt) {
               'bower_components/fotorama/fotorama@2x.png'
             ], dest: '<%= site.assets %>/css'}
         ]
-      }
+      },
+      scripts: {
+        files: [
+          {expand: true, flatten: true, src: ['js/bm-scripts.js'], dest: '<%= site.assets %>/js'}
+        ]
+      },
     },
 
     jshint: {
-      all: ['Gruntfile.js']
+      all: ['Gruntfile.js', 'js/**/*.js']
     },
 
     less: {
@@ -121,7 +126,7 @@ module.exports = function(grunt) {
         livereload: true,
       },
       assemble: {
-        files: ['templates/**/*.hbs'],
+        files: ['templates/**/*.hbs', '<%= site.data %>'],
         tasks: ['assemble']
       },
       less: {
@@ -131,7 +136,11 @@ module.exports = function(grunt) {
       images: {
         files: 'images/**/*.*',
         tasks: ['copy:images']
-      }
+      },
+      scripts: {
+        files: 'js/**/*.js',
+        tasks: ['jshint', 'copy:scripts']
+      },
     }
   });
 
