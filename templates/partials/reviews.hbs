@@ -1,0 +1,14 @@
+<section class="butcher-reviews" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="-150">
+  <div class="container">
+    <header>
+      <h2 class="stripe"><span>Customer reviews</span></h2>
+    </header>
+    <div class="row">
+      <div data-width="100%" data-height="350" data-loop="true" data-autoplay="4000" class="col-sm-10 col-sm-offset-1 fotorama">
+        {{#each reviews}}
+          {{> review}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>
