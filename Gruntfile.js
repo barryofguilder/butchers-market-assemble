@@ -80,6 +80,11 @@ module.exports = function(grunt) {
     },
 
     copy: {
+      code: {
+        files: [
+          {expand: true, flatten: true, src: ['code/*.php'], dest: '<%= site.assets %>'}
+        ]
+      },
       favicon: {
         files: [
           {expand: true, src: ['favicon.ico', 'apple-touch-icon.png'], dest: 'dist'},
@@ -103,7 +108,7 @@ module.exports = function(grunt) {
         files: [
           {expand: true, flatten: true, src: ['js/bm-scripts.js'], dest: '<%= site.assets %>/js'}
         ]
-      },
+      }
     },
 
     jshint: {

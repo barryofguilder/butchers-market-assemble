@@ -10,6 +10,7 @@ var butcherApp = function ($, undefined) {
     });
 
     setupParallax();
+    setupNewsletter();
   });
 
   function setupMainNav() {
@@ -26,6 +27,31 @@ var butcherApp = function ($, undefined) {
   function setupParallax() {
     // Background images scrolling parallax
     $(window).stellar({ horizontalScrolling: false });
+  }
+
+  function setupNewsletter() {
+    $('.newsletter-form').submit(function() {
+      var str = $(this).serialize();
+
+      $.ajax({
+        type: 'POST',
+        url: 'assets/newsletter.php',
+        data: str,
+        success: function(response) {
+          if (response == 'PRINYAL') {
+            // Success Message
+            result = '<div class="alert alert-success">Well done! You\'re singned up!</div>';
+            setTimeout(function () {
+              location.reload(true);
+            }, 5000);
+          } else {
+            result = response;
+          }
+          $('#newsletter-messages').html(result);
+        }
+      });
+      return false;
+    });
   }
 
 }(window.jQuery);

@@ -1,0 +1,39 @@
+//
+// Newsletter
+// --------------------------------------------------
+// Styles for the Newsletter section
+
+.newsletter {
+  background: url("@{images}/promo.jpg") 50% 0 @brand-primary;
+  padding-top: @height-sm/2;
+  padding-bottom: @height-sm/2;
+  color: #fff;
+
+  h2 {
+    line-height: 42px;
+  }
+
+  .form-inline {
+    .btn {
+      margin-left: 15px;
+    }
+  }
+}
+
+.newsletter-form {
+  input {
+    min-width: 250px;
+  }
+
+  @media (max-width: @screen-sm-max) {
+    margin-top: @height-xs;
+  }
+
+  @media (max-width: @screen-xs-max) {
+    margin-top: @height-xs;
+    
+    .btn {
+      margin-top: @height-xxs;
+    }
+  }
+}
