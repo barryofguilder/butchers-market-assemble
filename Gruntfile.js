@@ -61,7 +61,10 @@ module.exports = function(grunt) {
           'bower_components/fotorama/fotorama.js',
 
           // jQuery Stellar, for parallax
-          'bower_components/jquery.stellar/jquery.stellar.js'
+          'bower_components/jquery.stellar/jquery.stellar.js',
+
+          // jQuery Validation, for feedback form validation
+          'bower_components/jquery-validation/dist/jquery.validate.js'
         ],
         dest: '<%= site.assets %>/js/vendor.js',
       }

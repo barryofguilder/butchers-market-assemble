@@ -1,0 +1,37 @@
+//
+// Forms
+// --------------------------------------------------
+// Styles for forms
+
+label {
+  font-weight: normal;
+}
+
+.alert {
+  border-radius: 0;
+  border: 3px solid;
+}
+
+.form-group {
+  &.success {
+    .form-control {
+      border: 3px solid @state-success-text;
+      box-shadow: none;
+    }
+
+    label.valid {
+      display: none !important;
+    }
+  }
+
+  &.error {
+    .form-control {
+      border: 3px solid @state-danger-text;
+      box-shadow: none;
+    }
+
+    label.error {
+      color: @state-danger-text;
+    }
+  }
+}
