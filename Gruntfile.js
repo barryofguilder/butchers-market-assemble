@@ -20,6 +20,20 @@ module.exports = function(grunt) {
       }
     },
 
+    cacheBust: {
+      options: {
+        assets: ['assets/css/*.css', 'assets/js/*.js'],
+        baseDir: '<%= site.dest %>'
+      },
+      app: {
+        files: [{
+          expand: true,
+          cwd: '<%= site.dest %>/',
+          src: ['*.html']
+        }]
+      }
+    },
+
     clean: {
       options: {
         force: true
@@ -114,6 +128,23 @@ module.exports = function(grunt) {
       }
     },
 
+    imagemin: {
+      images: {
+        files: [{
+          expand: true,
+          cwd: 'images/',
+          src: ['**/*.*'],
+          dest: 'images/'
+        }]
+      },
+      favicon: {
+        files: [{
+          expand: true,
+          src: ['apple-touch-icon.png']
+        }]
+      }
+    },
+
     jshint: {
       all: ['Gruntfile.js', 'js/**/*.js']
     },
@@ -129,6 +160,20 @@ module.exports = function(grunt) {
         },
         src: 'less/bm-styles.less',
         dest: '<%= site.assets %>/css/bm-styles.css'
+      }
+    },
+
+    uglify: {
+      options: {
+        report: 'min'
+      },
+      app: {
+        src: '<%= site.assets %>/js/bm-scripts.js',
+        dest: '<%= site.assets %>/js/bm-scripts.js'
+      },
+      vendor: {
+        src: '<%= site.assets %>/js/vendor.js',
+        dest: '<%= site.assets %>/js/vendor.js'
       }
     },
 
@@ -156,13 +201,17 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-assemble');
+  grunt.loadNpmTasks('grunt-cache-bust');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['clean', 'jshint', 'less:development', 'assemble', 'concat', 'copy', 'connect', 'watch']);
+  grunt.registerTask('build', ['clean', 'jshint', 'less:production', 'assemble', 'concat', 'imagemin', 'copy', 'uglify', 'cacheBust']);
 };
