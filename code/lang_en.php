@@ -10,3 +10,5 @@ $err_msg_noemail    =   "Please, enter your E-mail";
 
 // Wrong
 $err_msg_wrongmail  =   "Your E-mail is wrong!";
+
+?>

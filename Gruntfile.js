@@ -45,6 +45,13 @@ module.exports = function(grunt) {
       options: {
         separator: '\n;\n'
       },
+      appScripts: {
+        src: [
+          'js/app.js',
+          'js/app/**/*.js'
+        ],
+        dest: '<%= site.assets %>/js/bm-scripts.js'
+      },
       vendorStyles: {
         src: [
           // Fotorama, for carousel
@@ -99,7 +106,7 @@ module.exports = function(grunt) {
     copy: {
       code: {
         files: [
-          {expand: true, flatten: true, src: ['code/*.php'], dest: '<%= site.assets %>'}
+          {expand: true, src: ['code/**/*.php'], dest: '<%= site.assets %>'}
         ]
       },
       favicon: {
@@ -195,7 +202,7 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: 'js/**/*.js',
-        tasks: ['jshint', 'copy:scripts']
+        tasks: ['jshint', 'concat:appScripts', 'copy:scripts']
       },
     }
   });

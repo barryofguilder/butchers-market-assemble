@@ -1,23 +1,28 @@
-<section id="brn-feedback">
+<section>
   <div class="container">
     <header>
       <h2 class="stripe"><span>Feedback</span></h2>
     </header>
     <div class="row">
       <div class="col-sm-6">
-        <div id="feedback_messages"></div>
-        <form action="assets/feedback.php" method="post" class="form-horizontal feedback-form">
+        <div id="feedback-messages" class="hidden">
+          <div class="alert"></div>
+        </div>
+        <form id="feedback-form" action="assets/feedback.php" method="post" class="form-horizontal feedback-form">
           <div class="form-group">
-            <input id="name" type="text" name="name" placeholder="Your Name" class="form-control">
+            <input type="text" id="feedback_name" name="feedback_name" placeholder="Your Name" class="form-control">
           </div>
           <div class="form-group">
-            <input id="email" type="email" name="email" placeholder="Your E-mail" class="form-control">
+            <input type="email" id="feedback_email" name="feedback_email" placeholder="Your E-mail" class="form-control">
           </div>
           <div class="form-group">
-            <textarea id="message" name="message" cols="30" rows="7" placeholder="Your message" class="form-control"></textarea>
+            <textarea id="feedback_message" name="feedback_message" cols="30" rows="7" placeholder="Your message" class="form-control"></textarea>
           </div>
           <div class="form-group">
-            <button value="OK" type="submit" class="btn btn-default">Send</button>
+            <div id="recaptcha" class="g-recaptcha" data-sitekey="6LcrHAITAAAAACvTiT4qS4dvbwL7wgGRXhJtsKim"></div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-default feedback-btn">Send</button>
           </div>
         </form>
       </div>
