@@ -13,23 +13,33 @@
   border-color: @bm-gray-lightest;
   background-color: #fff;
 
-  .navbar-header {
-    button.navbar-toggle {
-      border: none;
-      padding: 5px 10px;
-      color: @bm-gray-light;
-      outline: none;
+  @media (max-width: @screen-sm-max) {
+    text-align: center;
 
-      &:hover {
-        color: @brand-primary;
-      }
+    h1 {
+      margin-top: @height-sm;
+    }
+  }
+
+  .navbar-collapse {
+    border-top: none;
+  }
+
+  .navbar-toggle {
+    border: none;
+    padding: 5px 10px;
+    color: @bm-gray-light;
+    outline: none;
+
+    &:hover {
+      color: @brand-primary;
     }
   }
 
   .navbar-nav {
     li {
       margin-bottom: 0;
-      
+
       a {
         color: @gray-dark;
         padding: 26px 30px;
