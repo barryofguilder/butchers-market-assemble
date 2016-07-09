@@ -10,3 +10,32 @@ footer {
     .text-center;
   }
 }
+
+.social-media-icons {
+  margin-top: 9px;
+  float: right;
+
+  @media (max-width: @screen-xs-max) {
+    .text-center;
+    float: none;
+    margin-bottom: 10px;
+  }
+}
+
+.social-media-icon {
+  display: inline-block;
+  color: @text-color;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 1px;
+  margin: 0 5px;
+  border: solid 1px @text-color;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+
+  &:hover {
+    background: @text-color;
+    color: #fff;
+  }
+}

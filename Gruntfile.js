@@ -116,7 +116,8 @@ module.exports = function(grunt) {
       },
       fonts: {
         files: [
-          {expand: true, flatten: true, src: ['bower_components/bootstrap/fonts/*.*'], dest: '<%= site.assets %>/fonts'}
+          //{expand: true, flatten: true, src: ['bower_components/bootstrap/fonts/*.*'], dest: '<%= site.assets %>/fonts'},
+          {expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*.*'], dest: '<%= site.assets %>/fonts'}
         ]
       },
       images: {
@@ -153,7 +154,7 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      all: ['Gruntfile.js', 'js/**/*.js']
+      all: ['Gruntfile.js', 'js/**/*.js', '!js/app/gloria-food.js']
     },
 
     less: {

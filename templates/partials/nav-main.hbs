@@ -19,10 +19,19 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Meat</a></li>
           <li><a href="#">Deli</a></li>
-          <li><a href="#">Dining Menu</a></li>
+          <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Dining
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="{{assets}}/images/bmmenu.pdf">View Printable Menu</a></li>
+              <li><a id="order-online" href="#">Order Online</a></li>
+            </ul>
+          </li>
           <li><a href="#">Beverage</a></li>
           <li><a href="#">Events</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#contact-section">Contact</a></li>
         </ul>
       </div>
     </div>
