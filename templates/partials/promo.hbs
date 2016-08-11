@@ -12,7 +12,7 @@
           {{> store-hours}}
         </div>
       </div>
-      <div class="col-md-6 col-xs-12">
+      <div class="col-md-6 hidden-xs">
         <div class="promo-wrapper">
           <div class="iphone-gallery-wrapper">
             <div data-loop="true" data-autoplay="4000" data-nav="false" class="fotorama">
@@ -24,6 +24,20 @@
           <div class="iphone">
             <img src="{{assets}}/images/iPhone_bg2.png" alt="iPhone gallery background" class="img-responsive">
           </div>
+        </div>
+      </div>
+      <div class="col-md-6 visible-xs-block">
+        <ul class="list-inline mobile-app-downloads">
+          <li>
+            <a href="#">
+              <img src="{{assets}}/images/app-store.png" alt="iOS app store" width="150px" height="45px">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="{{assets}}/images/google-play.png" alt="Android app" width="150px" height="45px">
+            </a>
+          </li>
         </div>
       </div>
     </div>
